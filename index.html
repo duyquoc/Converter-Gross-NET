@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="128x128" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content="Chuyển đổi lương Gross sang NET, tính thuế thu nhập cá nhân, tính chi phí bảo hiểm" name=description>
+  <meta content="Gross, NET, lương, bảo hiểm, thuế, thue thu nhập cá nhân, luong, bao hiem, thue thu nhap ca nhan, personal income tax, insurance, salary, wage, converter, 2016, 2017" name="keywords" />
+  <title>Chuyển đổi lương Gross - NET</title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/salary.min.css" rel="stylesheet" />
+  <link href="assets/css/print.css" rel="stylesheet" media="print" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+</head>
+<body class="home-page">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-19457969-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/">
+          <div class="logo-container">
+            <div class="brand" data-lang="converter-salary-gross-net">
+              Chuyển đổi lương Gross - NET
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navigation-index">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+    <div class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" id="info-form">
+            <div class="card card-form">
+              <form class="form">
+                <div class="header header-success text-center">
+                  <h4 data-lang="your-information">Nhập thông tin của bạn</h4>
+                </div>
+                <p class="text-divider" data-lang="income">Thu nhập</p>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                      <div class="form-group label-floating">
+                        <label class="control-label">VND</label>
+                        <input type="number" class="form-control" name="vnd" id="vnd" value="0" min="0">
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label">USD</label>
+                        <input type="number" class="form-control" name="usd" id="usd" value="1000" min="0">
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="exchange-rate">Tỉ giá</label>
+                        <input type="number" class="form-control" name="usd_rate" id="usd_rate" value="22300" min="0">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-divider" data-lang="region">Vùng</p>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-3 col-xs-6">
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="region" checked="true" value="0">
+                            <t data-lang="region">Vùng</t> I
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="region" value="1">
+                            <t data-lang="region">Vùng</t> II
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="region" value="2">
+                            <t data-lang="region">Vùng</t> III
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="region" value="3">
+                            <t data-lang="region">Vùng</t> IV
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-divider" data-lang="insurance">Bảo hiểm</p>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                      <div class="form-group" data-lang="pay-for">
+                        Tính bảo hiểm trên
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="payfor" value="0" checked="true">
+                            <t data-lang="full-wage">Lương</t>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-xs-4">
+                      <div class="form-group">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="payfor" value="1">
+                            <t data-lang="other">Khác</t>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-8">
+                      <div class="form-group label-floating">
+                        <input type="number" class="form-control" name="salary_for_insurance">
+                        <p class="help-block">VND</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="minimum-wage">Lương tối thiểu</label>
+                        <input type="number" class="form-control" name="employee_min_salary" id="employee_min_salary" value="1300000">
+                        <p class="help-block">VND</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="social">Xã hội</label>
+                        <input type="number" class="form-control" value="8" min="0" name="employee_social" id="employee_social">
+                        <p class="help-block">%</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="health">Y tế</label>
+                        <input type="number" class="form-control" value="1.5" min="0" name="employee_health" id="employee_health">
+                        <p class="help-block">%</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="unemployed">Thất nghiệp</label>
+                        <input type="number" class="form-control" value="1" min="0" name="employee_unemployment" id="employee_unemployment">
+                        <p class="help-block">%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                      <div class="form-group" data-lang="employer-pay">
+                        Người sử dụng lao động trả
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="social">Xã hội</label>
+                        <input type="number" class="form-control" value="18" min="0" name="employer_social" id="employer_social">
+                        <p class="help-block">%</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="health">Y tế</label>
+                        <input type="number" class="form-control" value="3" min="0" name="employer_health" id="employer_health">
+                        <p class="help-block">%</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="unemployed">Thất nghiệp</label>
+                        <input type="number" class="form-control" value="1" min="0" name="employer_unemployment" id="employer_unemployment">
+                        <p class="help-block">%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-divider" data-lang="reduction-based-on-family-circumstances">Giảm trừ gia cảnh</p>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="personal">Cá nhân</label>
+                        <input type="number" class="form-control" value="9000000" min="0" name="deduction_personal" id="deduction_personal">
+                        <p class="help-block">VND</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="dependant">Phụ thuộc</label>
+                        <input type="number" class="form-control" value="3600000" min="0" name="deduction_dependant" id="deduction_dependant">
+                        <p class="help-block">VND</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label" data-lang="number-of-dependant">Số người phụ thuộc</label>
+                        <input type="number" class="form-control" value="0" min="0" name="dependant_number" id="dependant_number">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button data-type="1"  type="button" class="btn btn-primary btn-convert">Gross - NET</button>
+                    <button data-type="0" type="button" class="btn btn-primary btn-convert">NET - Gross</button>
+                    <button type="button" class="btn btn-success btn-print" data-lang="print">In</button>
+                  </div>
+                </div>
+              </form>
+              <br>
+            </div>
+          </div>
+          <div class="col-md-6" id="result"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script id="tpl-result" type="text/template">
+  <div class="card card-form">
+    <div class="header header-info text-center">
+      <h4 data-lang="result">Kết quả lương Gross - NET</h4>
+    </div>
+    <div class="content curreny-buttons">
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <% if(rate_exchange == 1) { %>
+            <button type="button" class="btn btn-primary btn-xs btn-vnd">VND</button>
+            <button type="button" class="btn btn-success btn-xs btn-usd">USD</button>
+          <% } else { %>
+            <button type="button" class="btn btn-success btn-xs btn-vnd">VND</button>
+            <button type="button" class="btn btn-primary btn-xs btn-usd">USD</button>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <p class="text-divider" data-lang="explain-in-detail">Diễn giải chi tiết </p>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-hover table-striped">
+            <tbody>
+              <tr>
+                <td class="text-right" width="70%"><strong data-lang="gross-salary">Lương Gross</strong></td>
+                <td class="text-right" width="30%"><strong><%= $.number(oEmployeeIncomeTaxDetail.cross/rate_exchange, thousands_sep) %></strong></td>
+              </tr>
+              <tr>
+                <td class="text-right"><span data-lang="social-insurance">Bảo hiểm xã hội</span> (<%= config.employee_insurance.social %>%)	</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.social_insurance/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right"><span data-lang="health-insurance">Bảo hiểm y tế</span> (<%= config.employee_insurance.health %>%)</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.health_insurance/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right"><span data-lang="unemployment-insurance">Bảo hiểm thất nghiệp</span> (<%= config.employee_insurance.unemployment %>%)</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.unemployment_insurance/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right" data-lang="gross-salary">Thu nhập trước thuế</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.pre_tax_income/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right" data-lang="reduction-for-personal">Giảm trừ gia cảnh bản thân</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.deduction_personal/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right" data-lang="reduction-for-dependant">Giảm trừ gia cảnh người phụ thuộc</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.deduction_dependant/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right" data-lang="taxable-income">Thu nhập chịu thuế</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.taxable_income/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right" data-lang="personal-income-tax">Thuế thu nhập cá nhân</td>
+                <td class="text-right"><%= $.number(oEmployeeIncomeTaxDetail.personal_income_tax/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right"><strong data-lang="net-salary">Lương NET</strong></td>
+                <td class="text-right"><strong><%= $.number(oEmployeeIncomeTaxDetail.net/rate_exchange, thousands_sep) %></strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-divider" data-lang="detail-of-personal-income-tax">Chi tiết thuế thu nhập cá nhân</p>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-hover table-striped">
+            <tbody>
+              <% _.each(aEmployeeIncomeTaxLevels, function(row) { %>
+                <tr>
+                  <td class="text-right" width="60%" data-lang="<%= row.lang %>"><%= row.title %></td>
+                  <td class="text-right" width="15%"><%= row.percentage %>%</td>
+                  <td class="text-right" width="25%"><%= $.number(row.value/rate_exchange, thousands_sep) %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-divider" data-lang="employer-pay">Người sử dụng lao động trả</p>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-hover table-striped">
+            <tbody>
+              <tr>
+                <td class="text-right" width="70%"><strong data-lang="gross-salary">Lương Gross</strong></td>
+                <td class="text-right" width="30%"><strong><%= $.number(oEmployeeIncomeTaxDetail.cross/rate_exchange, thousands_sep) %></strong></td>
+              </tr>
+              <tr>
+                <td class="text-right"><span data-lang="social-insurance">Bảo hiểm xã hội</span> (<%= config.employer_insurance.social %>%)</td>
+                <td class="text-right"><%= $.number(oEmployerTaxDetail.social_insurance/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right"><span data-lang="health-insurance">Bảo hiểm y tế</span> (<%= config.employer_insurance.health %>%)</td>
+                <td class="text-right"><%= $.number(oEmployerTaxDetail.health_insurance/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right"><span data-lang="unemployment-insurance">Bảo hiểm thất nghiệp</span> (<%= config.employer_insurance.unemployment %>%)</td>
+                <td class="text-right"><%= $.number(oEmployerTaxDetail.unemployment_insurance/rate_exchange, thousands_sep) %></td>
+              </tr>
+              <tr>
+                <td class="text-right"><strong data-lang="total">Tổng cộng</strong></td>
+                <td class="text-right"><strong><%= $.number(oEmployerTaxDetail.total/rate_exchange, thousands_sep) %></strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/underscore.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.number.min.js" type="text/javascript"></script>
+<script src="assets/js/material.min.js"></script>
+<script src="assets/js/salary.js"></script>
+</html>
